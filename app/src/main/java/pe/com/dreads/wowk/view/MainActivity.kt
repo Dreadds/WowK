@@ -34,10 +34,10 @@ class MainActivity : BaseActivity(), ComicContract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        showToolbar()
+        //showToolbar()
 
         rvComics = findViewById<View>(R.id.rv_comics ) as RecyclerView
-        val layoutManager = GridLayoutManager(this,3)
+        val layoutManager = GridLayoutManager(this,2)
         rvComics.layoutManager = layoutManager
         comicAdapter = ComicAdapter(mutableListOf()){
             comic ->
@@ -147,5 +147,5 @@ class MainActivity : BaseActivity(), ComicContract.View {
         super.onDestroy()
     }
 
-    
+
 }
