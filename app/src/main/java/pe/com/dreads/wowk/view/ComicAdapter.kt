@@ -46,4 +46,13 @@ class ComicAdapter(var items: MutableList<ComicEntity>, val listener: (ComicEnti
         var name: TextView = view.findViewById(R.id.tv_name)
     }
 
+    fun clear(){
+        items.clear()
+        notifyDataSetChanged()
+    }
+    fun addComic(comic:ComicEntity){
+        items.add(comic)
+        notifyItemInserted(items.size-1)
+
+    }
 }
