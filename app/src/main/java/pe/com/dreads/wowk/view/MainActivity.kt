@@ -34,7 +34,7 @@ class MainActivity : BaseActivity(), ComicContract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        //showToolbar()
+        showToolbar()
 
         rvComics = findViewById<View>(R.id.rv_comics ) as RecyclerView
         val layoutManager = GridLayoutManager(this,2)
@@ -84,11 +84,11 @@ class MainActivity : BaseActivity(), ComicContract.View {
 
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.search, menu)
 
-        val iSearch = menu?.findItem(R.id.action_search)
-        val vSearch = iSearch?.actionView as SearchView
+        val iSearch = menu.findItem(R.id.action_search)
+        val vSearch = iSearch.actionView as SearchView
 
         disposable = Observable.create(ObservableOnSubscribe<String> {
             subscriber ->
